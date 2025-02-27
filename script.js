@@ -583,3 +583,33 @@ function makeMaze() {
     document.getElementById("mazeContainer").style.opacity = "100";
   }
 }
+
+let steps = 0; // Inicializa o contador de passos
+
+function updateSteps() {
+    steps++; // Incrementa o número de passos
+    showStatusContainer(steps); // Chama a função para mostrar o container
+}
+
+function showStatusContainer(steps) {
+    const statusContainer = document.getElementById('statusContainer');
+    const stepsCount = document.getElementById('stepsCount');
+
+    stepsCount.textContent = steps; // Atualiza o número de passos
+    statusContainer.style.display = 'block'; // Mostra o container
+
+    // Se você quiser ocultar o container após um tempo, pode usar setTimeout
+    setTimeout(() => {
+        statusContainer.style.display = 'none'; // Oculta o container após 3 segundos
+    }, 3000);
+}
+
+// Chame updateSteps() sempre que o jogador der um passo
+
+document.addEventListener('keydown', (event) => {
+    // Lógica para mover o jogador
+    // ...
+
+    // Chame updateSteps() após mover o jogador
+    updateSteps();
+});
