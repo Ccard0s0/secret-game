@@ -526,7 +526,7 @@ window.onload = function() {
   };
   sprite = new Image();
   sprite.src =
-    "./gordo.png" +
+    "./gordogil3.png" +
     "?" +
     new Date().getTime();
   sprite.setAttribute("crossOrigin", " ");
